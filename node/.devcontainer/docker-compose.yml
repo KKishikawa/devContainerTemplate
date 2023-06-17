@@ -3,7 +3,7 @@ services:
   node-dev:
     build: .
     volumes:
-      - .:/workspaces:cached
+      - ..:/workspaces:cached
       - project:/project
 volumes:
   project:
