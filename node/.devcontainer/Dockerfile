@@ -6,6 +6,6 @@ curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-
 curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash && \
 chmod a+x git*.* && \
 ls -l $PWD/git*.* | awk '{print "source "$9}' >> $HOME/.bashrc && \
-echo "export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \[\033[01;31m\]$(__git_ps1 "(%s)") \n\[\033[01;34m\]\$\[\033[00m\] '" >> $HOME/.bashrc
+echo "export PS1='\\\[\\\033[01;32m\\\]\\\u@\\\h\\\[\\\033[01;33m\\\] \\\w \\\[\\\033[01;31m\\\]\$(__git_ps1 \"(%s)\") \\\n\\\[\\\033[01;34m\\\]\\\$\\\[\\\033[00m\\\] '" >> $HOME/.bashrc
 
 ENTRYPOINT tail -f /dev/null
