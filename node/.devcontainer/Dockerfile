@@ -1,4 +1,4 @@
-FROM node:16-bullseye-slim
+FROM node:18-bookworm-slim
 
 RUN apt -y update && apt -y upgrade && apt -y install curl
 RUN mkdir -p /usr/local/etc/bash_completion.d && cd $_ && \
