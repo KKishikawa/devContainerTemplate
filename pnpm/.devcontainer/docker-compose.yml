@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  node-dev:
+    build:
+      context: .
+      args:
+        - NODE_VER=18.16
+    volumes:
+      - workspaces:/workspaces
+volumes:
+  workspaces:
