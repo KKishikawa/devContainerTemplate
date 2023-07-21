@@ -6,7 +6,9 @@ RUN mkdir /workspaces && chown vscode:vscode /workspaces
 USER vscode
 ENV PNPM_HOME=/home/vscode/.pnpm
 ENV PATH $PATH:${PNPM_HOME}
-RUN bash -c "curl -fsSL https://get.pnpm.io/install.sh | bash -"
-RUN bash -c "cd ~ && pnpm env use --global ${NODE_VER}"
+RUN cd ~ && \
+    curl -fsSL https://get.pnpm.io/install.sh | bash - && \
+    pnpm config set store-dir ${HOME}/.pnpm-store && \
+    pnpm env use --global ${NODE_VER}
 
 ENTRYPOINT tail -f /dev/null
